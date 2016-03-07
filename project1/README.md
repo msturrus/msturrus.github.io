@@ -4,7 +4,7 @@
     This project is going to be a choose-your-own adventure style game with a modestly branching storyline and least one minigame.  The story will be about the protagonist attempting to steal an historic space capsule from the Smithsonian.  I am not sure how long anything will take so I am going to build it out in phases.
 
 
-    **ESSENTIALS**
+**ESSENTIALS**
         I am going to build this first, in order to be sure to meet the project requirements by the deadline.  This will include the intro text, one minigame (navigating the smithsonian by clicking doors in a proper sequence, generated randomly at game start), and two ending outcomes (success/failure) based on successfully completing the minigame.  It will require linked html pages, extensive CSS, a manageable amount of JQuery/javascript, and a manageable amount of basic art assets.
 
     **ESSENTIALS +**
