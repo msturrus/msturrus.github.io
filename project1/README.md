@@ -1,4 +1,3 @@
-# msturrus.github.io/project1
 
 **Project 1**
 
