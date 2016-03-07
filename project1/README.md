@@ -13,7 +13,7 @@ This will add on to the essentials by adding story branches, determined by user'
 ## **XTRA**
 This version will add 1-2 additional minigames for a total of 2-3.  These minigames and their outcomes would be incorporated into the extra story branches added in ESSENTIALS + and would replace some of the simple choices.  Compared to ESSENTIALS +, It will require a similar number of linked HTML pages, a large amount of added CSS, a large amount of added JQuery/javascript, and added art assets.
 
-# Story Outline
+# Story Outline - ESSENTIALS
 
 ### Intro - 1
 
@@ -25,10 +25,10 @@ This version will add 1-2 additional minigames for a total of 2-3.  These miniga
 
 ### Part 1
 
-**{playerCharacter}** contacts an aquaintance who is a docent at **National Air and Space Museum**, and gets **{layoutInformation}** from him/her concerning the capsule's location and security measures.  **{playerCharacter}** resolves to use this information to find a way to the capsule, where he will steal it and load it on a flatbed, ideally escaping with the capsule and drawing attention to his father's purported career as an astronaut.
+**{playerCharacter}** contacts an aquaintance who is a docent at **National Air and Space Museum**, and gets **{layoutInformation}** (randomly pulled from an array of possibilities) from him/her concerning the capsule's location and security measures.  **{playerCharacter}** resolves to use this information to find a way to the capsule, where he will steal it and load it on a flatbed, ideally escaping with the capsule and drawing attention to his father's purported career as an astronaut.
 
 ### Part 1 minigame
 
-The user must navigate through the museum, clicking on doors in a sequence based on the **{layoutInformation}** generated in the previous segment.  If the user makes a mistake in the sequence, **{playerCharacter}** is arrested and gets linked to **badend.html**.  If he succeeds, he escapes with the capsules and gets linked to **goodend.html**.  
+The user must navigate through the museum, clicking on doors in a sequence based on the **{layoutInformation}** generated on load and relayed to the user in the previous sequence.  If the user makes a mistake in the sequence, **{playerCharacter}** is arrested and gets linked to **badend.html**.  If he succeeds, he escapes with the capsules and gets linked to **goodend.html**.  
 
 ## END
