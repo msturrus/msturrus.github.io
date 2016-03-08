@@ -326,6 +326,7 @@ main {
 
 
 footer {
+  position: fixed;
 	border: 1px solid black;
 	height: 200px;
 	padding: 10px 0;
