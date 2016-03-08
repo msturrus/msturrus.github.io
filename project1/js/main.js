@@ -1,19 +1,20 @@
 var doorCounter = 0;
 
 
-$('.doors:not(.rightDoor)').on('click', function() {
+$('.doors').on('click', function() {
+	console.log(this);
 	self = this;
 	if (doorCounter === 20){
 		var youWin = $('<div>You Win!</div>');
 		$(self).addClass("lastDoor");
 		$(youWin).addClass('gotCaught');
 		$('body').append(youWin);
-	} else if (Math.floor(Math.random()* 5) === 1){
+	} else if (Math.floor(Math.random()* 20) === 1){
 		var gotCaught = $('<div>Ya got caught, son!</div>');
 		$(self).addClass("wrongDoor");
 		$(gotCaught).addClass('gotCaught');
 		$('body').append(gotCaught);
-		$('main').addClass('preposterous');
+		setTimeout($('main').addClass('preposterous'), 5000);
 	}
 		else {
 		$(self).addClass('rightDoor');
