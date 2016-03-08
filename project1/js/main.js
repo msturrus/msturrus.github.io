@@ -1,4 +1,7 @@
 var doorCounter = 0;
+var intellect = 0;
+var cunning = 0;
+var acumen = 0;
 
 // Win conditions: Player will win if he selects all doors without
 // triggering an alert || Player has 1/15 chance of winning per door
@@ -34,7 +37,22 @@ $('.doors').on('click', function() {
 
 });
 
-$('html, body').on('click', '.centerheadstone', function() {
-	$(this).remove();
-	$('.headstones').removeClass("blurall");
-});
+$('#roll-btn').click(function() {
+	var intellectr = Math.floor(Math.random()* 100);
+	var cunningr = Math.floor(Math.random()* 100);
+	var acumenr = Math.floor(Math.random()* 100);
+	$('#intellect').html("Intellect: " + intellectr);
+	$('#cunning').html("Cunning: " + cunningr);
+	$('#acumen').html("Acumen: " + acumenr);
+	return intellect = intellectr, cunning = cunningr, acumen = acumenr;
+
+})
+$('#comt-btn').click(function() {
+localStorage.setItem('intellect', intellect);
+localStorage.setItem('cunning', cunning);
+localStorage.setItem('acumen', acumen);
+})
+// $('html, body').on('click', '.centerheadstone', function() {
+// 	$(this).remove();
+// 	$('.headstones').removeClass("blurall");
+// });
