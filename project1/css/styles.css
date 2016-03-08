@@ -52,6 +52,18 @@ body {
 	transition:all ease-in-out;
 }
 
+.rightDoor {
+	height: 140px;
+	width: 80px;
+	border: 1px solid black;
+	float: left;
+	margin: 0px 10px;
+	padding: 10px;
+	border-radius: 5px;
+	background: green; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	transition:all ease-in-out;
+}
+
 .doorknob {
   border-radius: 50%;
   border: 1px solid black;
@@ -87,7 +99,6 @@ transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
 	-moz-box-shadow: 0px 0px 75px #000000;
 	-webkit-box-shadow: 0px 0px 75px #000000;
 	box-shadow: 0px 0px 50px #000000;
-	background-color: white;
 	transition: all .5s ease-in-out;
   	background-color: white;
   	border-color: white;
@@ -123,6 +134,10 @@ a:hover {
 	-webkit-filter: blur(9px); filter: blur(9px);
 	/*transition: all .5s ease-in-out;
 	*/
+}
+
+.rightDoor:hover {
+  background-color: green;
 }
 /******************************************
 /* LAYOUT

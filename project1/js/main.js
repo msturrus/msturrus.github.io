@@ -1,10 +1,8 @@
 
-$('.headstones:not(.centerheadstone)').on('click', function() {
-	var $copy = $(this).clone();
-	$('main').append($copy);
-	$copy.addClass("centerheadstone");
-	$copy.removeClass("headstones");
-	$('.headstones').addClass("blurall");
+$('.doors:not(.rightDoor)').on('click', function() {
+	$(this).addClass("rightDoor");
+
+
 });
 
 $('html, body').on('click', '.centerheadstone', function() {
