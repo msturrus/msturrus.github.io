@@ -103,19 +103,7 @@ body {
 }
 
 
-.skillBox {
-	height: 140px;
-	width: 80px;
-	border: 1px solid black;
-	float: left;
-	margin: 0px 10px;
-	padding: 10px;
-	border-radius: 5px;
-	background: -webkit-linear-gradient(135deg, rgba(218,224,229, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	background: -moz-linear-gradient(135deg, rgba(218,224,229, 1) 0%,rgba(36,45,43, 1) 150%);
-	background: linear-gradient(135deg, rgba(218,224,229, 1) 0%,rgba(36,45,43, 1) 150%);
-	transition:all ease-in-out;
-}
+
 
 .skillBox {
 	height: 120px;
@@ -128,7 +116,25 @@ body {
 	background: -webkit-linear-gradient(135deg, rgba(218,224,229, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	background: -moz-linear-gradient(135deg, rgba(218,224,229, 1) 0%,rgba(36,45,43, 1) 150%);
 	background: linear-gradient(135deg, rgba(218,224,229, 1) 0%,rgba(36,45,43, 1) 150%);
-	transition:all ease-in-out;
+
+}
+
+.science {
+	background: -webkit-linear-gradient(135deg, rgba(50,50,229, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(135deg, rgba(50,50,229, 1) 0%,rgba(36,45,43, 1) 150%);
+	background: linear-gradient(135deg, rgba(50,50,229, 1) 0%,rgba(36,45,43, 1) 150%);
+}
+
+.roguery {
+	background: -webkit-linear-gradient(135deg, rgba(50,229,50, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(135deg, rgba(50,229,50, 1) 0%,rgba(36,45,43, 1) 150%);
+	background: linear-gradient(135deg, rgba(50,229,50, 1) 0%,rgba(36,45,43, 1) 150%);
+}
+
+.urban-combat {
+  background: -webkit-linear-gradient(135deg, rgba(229,50,50, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(135deg, rgba(229,50,50, 1) 0%,rgba(36,45,43, 1) 150%);
+  background: linear-gradient(135deg, rgba(229,50,50, 1) 0%,rgba(36,45,43, 1) 150%);
 }
 
 .skillBox:hover{
@@ -244,6 +250,14 @@ a:hover {
     margin-right: auto;
 
 }
+
+.skillrow {
+  width: 720px;
+	margin-top: 20px;
+	margin-bottom: 400px;
+	margin-left: auto;
+    margin-right: auto;
+}
 .gotCaught {
 font-family: 'Helvetica', Arial, sans-serif;
 position: fixed;
@@ -294,10 +308,13 @@ footer {
   position: fixed;
 	border: 1px solid black;
 	height: 200px;
-  width: 1040px;
+  width: 100%;
 	padding: 10px 0;
 	margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto
 	background: #8093ab;
+  text-align: center;
 }
 /*.centerheadstone:hover{
 	transition: none;
@@ -389,16 +406,26 @@ main {
 
 footer {
   position: fixed;
+  bottom: 0px;
+  left:calc(50% - 520px);
 	border: 1px solid black;
 	height: 200px;
   width: 1040px;
 	padding: 10px 0;
 	margin-top: 120px;
 	background: #8093ab;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
 }
 
 footer div {
 
+}
+
+#charToggle {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
 }
 
 /*@media screen and (max-width: 800px) {

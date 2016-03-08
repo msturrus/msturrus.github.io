@@ -1,3 +1,12 @@
+window.onload = function () {
+	// localStorage.getItem('intellect');
+	// localStorage.getItem('cunning');
+	// localStorage.getItem('acumen');
+	$('#char-intellect').html("Intellect: " + localStorage.getItem('intellect'));
+	$('#char-cunning').html("Cunning: " + localStorage.getItem('cunning'));
+	$('#char-acumen').html("Acumen: " + localStorage.getItem('acumen'));
+}
+
 var doorCounter = 0;
 var intellect = 0;
 var cunning = 0;
@@ -48,9 +57,16 @@ $('#roll-btn').click(function() {
 
 })
 $('#comt-btn').click(function() {
-localStorage.setItem('intellect', intellect);
-localStorage.setItem('cunning', cunning);
-localStorage.setItem('acumen', acumen);
+	localStorage.setItem('intellect', intellect);
+	localStorage.setItem('cunning', cunning);
+	localStorage.setItem('acumen', acumen);
+	$('#char-intellect').html("Intellect: " + intellect);
+	$('#char-cunning').html("Cunning: " + cunning);
+	$('#char-acumen').html("Acumen: " + acumen);
+})
+
+$('#charToggle').click(function() {
+	$('.characterSheet').slideToggle();
 })
 // $('html, body').on('click', '.centerheadstone', function() {
 // 	$(this).remove();

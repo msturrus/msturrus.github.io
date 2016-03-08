@@ -38,14 +38,14 @@
         <button type="button" name="roll-btn" id="roll-btn">Roll Stats!</button><br><br><br>
         <button type="button" name="comt-btn" id="comt-btn">Commit Stats</button>
       </div>
-      <div class="firstrow clearfix">
-        <div class="skillBox">
+      <div class="skillrow clearfix">
+        <div class="skillBox science" draggable="true">
           <div class="name">Science!</div>
         </div>
-        <div class="skillBox">
+        <div class="skillBox roguery" draggable="true">
           <div class="name">Roguery</div>
         </div>
-        <div class="skillBox">
+        <div class="skillBox urban-combat" draggable="true">
           <div class="name">Urban Combat</div>
         </div>
       </div>
@@ -54,9 +54,13 @@
 
 
 
-    <footer class="clearfix">
-
+    <footer class="characterSheet">
+      Character Sheet<br><br>
+      <div id="char-intellect">Intellect:</div>
+      <div id="char-cunning">Cunning:</div>
+      <div id="char-acumen">Acumen:</div><br>
     </footer>
+    <button type="button" name="charToggle" id="charToggle">Hide</button>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/main.js"></script>
   </body>
