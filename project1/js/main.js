@@ -70,22 +70,51 @@ $('#comt-btn').click(function() {
 	$('#char-acumen').html("Acumen: " + acumen);
 })
 
+$('.scienceBox').click(function() {
+	localStorage.setItem('specialty', 'science');
+	// $('.rogueryBox').css('opacity', '.5');
+	$('.rogueryBox').removeClass('rogueryBox');
+	// $('.urban-combatBox').css('opacity', '.5');
+	$('.urban-combatBox').removeClass('urban-combatBox');
+})
+
+$('.rogueryBox').click(function() {
+	localStorage.setItem('specialty', 'roguery');
+	// $('.scienceBox').css('opacity', '.5');
+	$('.scienceBox').removeClass('scienceBox');
+	// $('.urban-combatBox').css('opacity', '.5');
+	$('.urban-combatBox').removeClass('urban-combatBox');
+})
+
+$('.urban-combat').click(function() {
+	localStorage.setItem('specialty', 'urbanCombat');
+	// $('.scienceBox').css('opacity', '.5');
+	$('.scienceBox').removeClass('scienceBox');
+	// $('.rogueryBox').css('opacity', '.5');
+	$('.rogueryBox').removeClass('rogueryBox');
+})
+
 // Show's/hides character sheet
 $('#charToggle').click(function() {
 	$('.characterSheet').slideToggle();
 })
 
-var dragSrcEl = null;
-
-function handleDragStart(e) {
-  // Target (this) element is the source node.
-  this.style.opacity = '0.4';
-
-  dragSrcEl = this;
-
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', this.innerHTML);
-}
+// function handleDrop(e) {
+//   // this/e.target is current target element.
+//
+//   if (e.stopPropagation) {
+//     e.stopPropagation(); // Stops some browsers from redirecting.
+//   }
+//
+//   // Don't do anything if dropping the same column we're dragging.
+//   if (dragSrcEl != this) {
+//     // Set the source column's HTML to the HTML of the column we dropped on.
+//     dragSrcEl.innerHTML = this.innerHTML;
+//     this.innerHTML = e.dataTransfer.getData('text/html');
+//   }
+//
+//   return false;
+// }
 // $('html, body').on('click', '.centerheadstone', function() {
 // 	$(this).remove();
 // 	$('.headstones').removeClass("blurall");

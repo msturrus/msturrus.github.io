@@ -119,19 +119,19 @@ body {
 
 }
 
-.science {
+.scienceBox {
 	background: -webkit-linear-gradient(135deg, rgba(50,50,229, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	background: -moz-linear-gradient(135deg, rgba(50,50,229, 1) 0%,rgba(36,45,43, 1) 150%);
 	background: linear-gradient(135deg, rgba(50,50,229, 1) 0%,rgba(36,45,43, 1) 150%);
 }
 
-.roguery {
+.rogueryBox {
 	background: -webkit-linear-gradient(135deg, rgba(50,229,50, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	background: -moz-linear-gradient(135deg, rgba(50,229,50, 1) 0%,rgba(36,45,43, 1) 150%);
 	background: linear-gradient(135deg, rgba(50,229,50, 1) 0%,rgba(36,45,43, 1) 150%);
 }
 
-.urban-combat {
+.urban-combatBox {
   background: -webkit-linear-gradient(135deg, rgba(229,50,50, 1) 0%,rgba(36,45,43, 1) 150%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background: -moz-linear-gradient(135deg, rgba(229,50,50, 1) 0%,rgba(36,45,43, 1) 150%);
   background: linear-gradient(135deg, rgba(229,50,50, 1) 0%,rgba(36,45,43, 1) 150%);
