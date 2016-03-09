@@ -86,7 +86,7 @@ $('.rogueryBox').click(function() {
 	$('.urban-combatBox').removeClass('urban-combatBox');
 })
 
-$('.urban-combat').click(function() {
+$('.urban-combatBox').click(function() {
 	localStorage.setItem('specialty', 'urbanCombat');
 	// $('.scienceBox').css('opacity', '.5');
 	$('.scienceBox').removeClass('scienceBox');
@@ -98,24 +98,3 @@ $('.urban-combat').click(function() {
 $('#charToggle').click(function() {
 	$('.characterSheet').slideToggle();
 })
-
-// function handleDrop(e) {
-//   // this/e.target is current target element.
-//
-//   if (e.stopPropagation) {
-//     e.stopPropagation(); // Stops some browsers from redirecting.
-//   }
-//
-//   // Don't do anything if dropping the same column we're dragging.
-//   if (dragSrcEl != this) {
-//     // Set the source column's HTML to the HTML of the column we dropped on.
-//     dragSrcEl.innerHTML = this.innerHTML;
-//     this.innerHTML = e.dataTransfer.getData('text/html');
-//   }
-//
-//   return false;
-// }
-// $('html, body').on('click', '.centerheadstone', function() {
-// 	$(this).remove();
-// 	$('.headstones').removeClass("blurall");
-// });
