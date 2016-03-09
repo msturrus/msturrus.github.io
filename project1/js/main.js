@@ -5,6 +5,7 @@ window.onload = function () {
 	$('#char-intellect').html("Intellect: " + localStorage.getItem('intellect'));
 	$('#char-cunning').html("Cunning: " + localStorage.getItem('cunning'));
 	$('#char-acumen').html("Acumen: " + localStorage.getItem('acumen'));
+	$('#char-specialty').html("Specialty: " + localStorage.getItem('specialty'));
 }
 
 var doorCounter = 0;
