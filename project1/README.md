@@ -31,4 +31,6 @@ This version will add 1-2 additional minigames for a total of 2-3.  These miniga
 
 The user must navigate through the museum, clicking on doors in a sequence based on the **{layoutInformation}** generated on load and relayed to the user in the previous sequence.  If the user makes a mistake in the sequence, **{playerCharacter}** is arrested and gets linked to **badend.html**.  If he succeeds, he escapes with the capsules and gets linked to **goodend.html**.  
 
+
+
 ## END
