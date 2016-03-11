@@ -32,5 +32,18 @@ This version will add 1-2 additional minigames for a total of 2-3.  These miniga
 The user must navigate through the museum, clicking on doors in a sequence based on the **{layoutInformation}** generated on load and relayed to the user in the previous sequence.  If the user makes a mistake in the sequence, **{playerCharacter}** is arrested and gets linked to **badend.html**.  If he succeeds, he escapes with the capsules and gets linked to **goodend.html**.  
 
 
+___
 
-## END
+# First Build
+
+This build is pretty bare bones.  It includes very minimal css styling, no img or sounds, and only one story branch to act as a test branch.
+
+Only the following html files are used, the rest are space-holders:
+
+**index.html**: Intro, backstory, link to the character creator
+
+**charactercreator.html**:  A page for assigning character name, and generating and saving stats to localStorage.
+
+**branch1.html**: a simple narrative encounter with a museum guard.  Depending on the skill chosen and a bit of luck the skill check will link the user to **winner.html** or **loser.html**.  Alternately, the user can choose to play the minigame at **hallgame.html**
+
+**hallgame.html**:  A minigame that involves clicking different doors.  There is a small chance (1/15) per door that the user will get caught and linked to **loser.html**.  There is a larger chance (1/12) that each door will reveal the capsule and link the user to **winner.html**.  Failing either of these, there is a click counter that links the user to **winner.html** once 20 doors have been clicked without getting caught.  All links are preceded by a brief timeout.

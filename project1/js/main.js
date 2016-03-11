@@ -31,20 +31,26 @@ $('.doors').on('click', function() {
 		$(self).addClass("lastDoor");
 		$(youWin).addClass('gotCaught');
 		$('body').append(youWin);
-		window.location.href = "winner.html";
-	} else if (Math.floor(Math.random()* 20) === 1){
+		setTimeout(function() {
+			window.location.href = "winner.html";
+		},2000);
+	} else if (Math.floor(Math.random()* 15) === 1){
 		var gotCaught = $('<div>Ya got caught! Sorry!</div>');
 		$(self).addClass("wrongDoor");
 		$(gotCaught).addClass('gotCaught');
 		$('body').append(gotCaught);
-		setTimeout($('main').addClass('preposterous'), 5000);
-		window.location.href = "loser.html"
-	} else if (Math.floor(Math.random()* 15) === 1){
+		$('main').addClass('preposterous');
+		setTimeout(function() {
+			window.location.href = "loser.html";
+		},8000);
+	} else if (Math.floor(Math.random()* 12) === 1){
 		var youWin = $('<div>You found the capsule!</div>');
 		$(self).addClass("lastDoor");
 		$(youWin).addClass('gotCaught');
 		$('body').append(youWin);
-		window.location.href = "winner.html";
+		setTimeout(function() {
+			window.location.href = "winner.html";
+		},2000);
 	}
 		else {
 		$(self).addClass('rightDoor');
@@ -71,20 +77,20 @@ $('#comt-btn').click(function() {
 	localStorage.setItem('intellect', intellect);
 	localStorage.setItem('cunning', cunning);
 	localStorage.setItem('acumen', acumen);
-	localStorage.setItem('char-name', charName);
+	// localStorage.setItem('char-name', charName);
 	$('#char-intellect').html("Intellect: " + intellect);
 	$('#char-cunning').html("Cunning: " + cunning);
 	$('#char-acumen').html("Acumen: " + acumen);
 	var charName1 = $('#name-input').val();
 	$('#char-name').html(charName1);
-	return charName = charName1;
 	localStorage.setItem('char-name', charName1);
+	return charName = charName1;
 })
 
 
-//branch1 checks
+//branch1 skill checks
 $('#branch1-science').click(function (){
-	if (parseInt(localStorage.getItem('intellect')) >= (30 + (Math.floor(Math.random()* 20)))){
+	if (parseInt(localStorage.getItem('intellect')) >= (30 + (Math.floor(Math.random()* 40)))){
 		window.location.href = "winner.html"
 	} else {
 		window.location.href = "loser.html"
@@ -93,7 +99,7 @@ $('#branch1-science').click(function (){
 })
 
 $('#branch1-cunning').click(function (){
-	if (parseInt(localStorage.getItem('cunning')) >= (30 + (Math.floor(Math.random()* 20)))){
+	if (parseInt(localStorage.getItem('cunning')) >= (30 + (Math.floor(Math.random()* 30)))){
 		window.location.href = "winner.html"
 	} else {
 		window.location.href = "loser.html"
