@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Your description goes here">
+      <meta name="keywords" content="one, two, three">
+
+    <title>Smithsonian</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <header class="clearfix">
+      <nav>Historic Smithsonian Space Capsule Heist!
+
+        <!-- <ul class="hamburger">
+          <li></li>
+          <li></li>
+          <li></li> -->
+        </ul>
+      </nav>
+
+    </header>
+    <main class="clearfix">
+
+      <div class="statBox">
+        <article class="intro-text">
+          <p>You arrive at the museum.  You had the foresight to bring a flatbed to load the space capsule on.  A friendly guard greets you.  Your first challenge!<br><br>Do you:</p>
+        </article>
+        <div>
+
+        </div>
+        <aside class="skill-list">
+          <button type="button" name="roll-btn" id="branch1-science">Attempt to Convincingly pose as a rocket scientist and insist the capsule be relocated to your truck (intellect)</button><br>
+          <button type="button" name="roll-btn" id="branch1-cunning">Offer the guard a modest sum of money to aid you in the heist (roguery)</button><br>
+          <button type="button" name="roll-btn" id="branch1-urban">Punch that guard! Bam! (urban combat)</button><br>
+          <button type="button" name="roll-btn" id="branch1-hallgame"><a href="hallgame.html">Breeze by him and try to find the capsule on your own (minigame!)</a></button><br>
+        </aside>
+
+
+
+      <!-- <div class="skillrow clearfix"> -->
+        <!-- <div class="skillBox scienceBox" draggable="true">
+          <div class="name">Science!</div>
+        </div>
+        <div class="skillBox rogueryBox" draggable="true">
+          <div class="name">Roguery</div>
+        </div>
+        <div class="skillBox urban-combatBox" draggable="true">
+          <div class="name">Urban Combat</div> -->
+        <!-- </div> -->
+
+      </div>
+
+    </main>
+
+
+
+    <footer class="characterSheet">
+      Character Sheet<br><br>
+      <div id="char-name"></div><br>
+      <div id="char-intellect">Intellect:</div>
+      <div id="char-cunning">Cunning:</div>
+      <div id="char-acumen">Acumen:</div><br>
+      <div class="nextlink">
+        <div><a class="citation" href="branch1.html">When you have a character, click here to start!</a></div>
+      </div>
+    </footer>
+    <button type="button" name="charToggle" id="charToggle">Hide</button>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

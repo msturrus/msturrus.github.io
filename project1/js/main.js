@@ -5,12 +5,13 @@ window.onload = function () {
 	$('#char-intellect').html("Intellect: " + localStorage.getItem('intellect'));
 	$('#char-cunning').html("Cunning: " + localStorage.getItem('cunning'));
 	$('#char-acumen').html("Acumen: " + localStorage.getItem('acumen'));
-	$('#char-specialty').html("Specialty: " + localStorage.getItem('specialty'));
+	$('#char-name').html(localStorage.getItem('char-name'));
 }
 
 var doorCounter = 0;
 
 // local variable stats (only relevant on charcreation.html)
+var charName = "";
 var intellect = 0;
 var cunning = 0;
 var acumen = 0;
@@ -29,17 +30,20 @@ $('.doors').on('click', function() {
 		$(self).addClass("lastDoor");
 		$(youWin).addClass('gotCaught');
 		$('body').append(youWin);
+		window.location.href = "winner.html";
 	} else if (Math.floor(Math.random()* 20) === 1){
-		var gotCaught = $('<div>Ya got caught, son!</div>');
+		var gotCaught = $('<div>Ya got caught! Sorry!</div>');
 		$(self).addClass("wrongDoor");
 		$(gotCaught).addClass('gotCaught');
 		$('body').append(gotCaught);
 		setTimeout($('main').addClass('preposterous'), 5000);
+		window.location.href = "loser.html"
 	} else if (Math.floor(Math.random()* 15) === 1){
 		var youWin = $('<div>You found the capsule!</div>');
 		$(self).addClass("lastDoor");
 		$(youWin).addClass('gotCaught');
 		$('body').append(youWin);
+		window.location.href = "winner.html";
 	}
 		else {
 		$(self).addClass('rightDoor');
@@ -69,33 +73,74 @@ $('#comt-btn').click(function() {
 	$('#char-intellect').html("Intellect: " + intellect);
 	$('#char-cunning').html("Cunning: " + cunning);
 	$('#char-acumen').html("Acumen: " + acumen);
+	var charName = $('#name-input').val();
+	$('#name-submit').html(charName);
+	return charName;
 })
 
-$('.scienceBox').click(function() {
-	localStorage.setItem('specialty', 'science');
-	// $('.rogueryBox').css('opacity', '.5');
-	$('.rogueryBox').removeClass('rogueryBox');
-	// $('.urban-combatBox').css('opacity', '.5');
-	$('.urban-combatBox').removeClass('urban-combatBox');
+
+//branch1 checks
+$('#branch1-science').click(function (){
+	if (parseInt(localStorage.getItem('intellect')) >= (30 + (Math.floor(Math.random()* 20)))){
+		window.location.href = "winner.html"
+	} else {
+		window.location.href = "loser.html"
+	}
+
 })
 
-$('.rogueryBox').click(function() {
-	localStorage.setItem('specialty', 'roguery');
-	// $('.scienceBox').css('opacity', '.5');
-	$('.scienceBox').removeClass('scienceBox');
-	// $('.urban-combatBox').css('opacity', '.5');
-	$('.urban-combatBox').removeClass('urban-combatBox');
+$('#branch1-cunning').click(function (){
+	if (parseInt(localStorage.getItem('cunning')) >= (30 + (Math.floor(Math.random()* 20)))){
+		window.location.href = "winner.html"
+	} else {
+		window.location.href = "loser.html"
+	}
+
 })
 
-$('.urban-combatBox').click(function() {
-	localStorage.setItem('specialty', 'urbanCombat');
-	// $('.scienceBox').css('opacity', '.5');
-	$('.scienceBox').removeClass('scienceBox');
-	// $('.rogueryBox').css('opacity', '.5');
-	$('.rogueryBox').removeClass('rogueryBox');
+$('#branch1-urban').click(function (){
+	if (parseInt(localStorage.getItem('acumen')) >= (30 + (Math.floor(Math.random()* 20)))){
+		window.location.href = "winner.html"
+	} else {
+		window.location.href = "loser.html"
+	}
+
 })
+
+// $('#char-cunning').html("Cunning: " + localStorage.getItem('cunning'));
+// $('#char-acumen').html("Acumen: " + localStorage.getItem('acumen'));
+// $('.scienceBox').click(function() {
+// 	localStorage.setItem('specialty', 'science');
+// 	// $('.rogueryBox').css('opacity', '.5');
+// 	$('.rogueryBox').removeClass('rogueryBox');
+// 	// $('.urban-combatBox').css('opacity', '.5');
+// 	$('.urban-combatBox').removeClass('urban-combatBox');
+// })
+//
+// $('.rogueryBox').click(function() {
+// 	localStorage.setItem('specialty', 'roguery');
+// 	// $('.scienceBox').css('opacity', '.5');
+// 	$('.scienceBox').removeClass('scienceBox');
+// 	// $('.urban-combatBox').css('opacity', '.5');
+// 	$('.urban-combatBox').removeClass('urban-combatBox');
+// })
+//
+// $('.urban-combatBox').click(function() {
+// 	localStorage.setItem('specialty', 'urbanCombat');
+// 	// $('.scienceBox').css('opacity', '.5');
+// 	$('.scienceBox').removeClass('scienceBox');
+// 	// $('.rogueryBox').css('opacity', '.5');
+// 	$('.rogueryBox').removeClass('rogueryBox');
+// })
+
+
 
 // Show's/hides character sheet
 $('#charToggle').click(function() {
 	$('.characterSheet').slideToggle();
 })
+
+
+
+
+//event/branch toggles

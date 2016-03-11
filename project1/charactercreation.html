@@ -17,7 +17,7 @@
   <body>
 
     <header class="clearfix">
-      <nav>Smithsonian
+      <nav>Historic Smithsonian Space Capsule Heist!
 
         <!-- <ul class="hamburger">
           <li></li>
@@ -28,26 +28,39 @@
 
     </header>
     <main class="clearfix">
+
       <div class="statBox">
+        <article class="intro-text">
+          <p>Hello, and welcome to a promising career in the stealing of antiquities!  On this page, you will be generating your stats.  Some will be good and some will be bad, but, along with your choices, these stats will determine your path forward at critical junctures.  When you're done rerolling and you've decided on a set of stats, press the commit button. </p>
+        </article>
         <div>
-          <div>Roll stats, choose specialty</div>
+
         </div>
-        <div id="intellect">Intellect:</div>
-        <div id="cunning">Cunning:</div>
-        <div id="acumen">Acumen:</div><br>
+        <aside class="skill-list">
+          <div id="intellect">Intellect:</div>
+          <div id="cunning">Cunning:</div>
+          <div id="acumen">Acumen:</div><br>
+        </aside>
+
+
         <button type="button" name="roll-btn" id="roll-btn">Roll Stats!</button><br><br><br>
-        <button type="button" name="comt-btn" id="comt-btn">Commit Stats</button>
+          <label><input type="text" id="name-input"/></label>
+          <!-- <input type="text" value="Character Name" id="name-submit"/> -->
+        <br><br>
+        <button type="button" name="comt-btn" id="comt-btn">Commit Stats and Character Name</button>
       </div>
-      <div class="skillrow clearfix">
-        <div class="skillBox scienceBox" draggable="true">
+
+      <!-- <div class="skillrow clearfix"> -->
+        <!-- <div class="skillBox scienceBox" draggable="true">
           <div class="name">Science!</div>
         </div>
         <div class="skillBox rogueryBox" draggable="true">
           <div class="name">Roguery</div>
         </div>
         <div class="skillBox urban-combatBox" draggable="true">
-          <div class="name">Urban Combat</div>
-        </div>
+          <div class="name">Urban Combat</div> -->
+        <!-- </div> -->
+
       </div>
 
     </main>
@@ -56,9 +69,13 @@
 
     <footer class="characterSheet">
       Character Sheet<br><br>
+      <div id="char-name"></div><br>
       <div id="char-intellect">Intellect:</div>
       <div id="char-cunning">Cunning:</div>
       <div id="char-acumen">Acumen:</div><br>
+      <div class="nextlink">
+        <div><a class="citation" href="branch1.html">When you have a character, click here to start!</a></div>
+      </div>
     </footer>
     <button type="button" name="charToggle" id="charToggle">Hide</button>
     <script src="js/jquery-1.11.2.min.js"></script>
