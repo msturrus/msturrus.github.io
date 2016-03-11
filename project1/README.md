@@ -36,7 +36,15 @@ ___
 
 # First Build
 
+
 This build is pretty bare bones.  It includes very minimal css styling, no img or sounds, and only one story branch to act as a test branch.
+
+## Technologies Used:
+  -HTML
+  -CSS
+  -javascript
+  -jQuery
+
 
 Only the following html files are used, the rest are space-holders:
 
@@ -47,3 +55,12 @@ Only the following html files are used, the rest are space-holders:
 **branch1.html**: a simple narrative encounter with a museum guard.  Depending on the skill chosen and a bit of luck the skill check will link the user to **winner.html** or **loser.html**.  Alternately, the user can choose to play the minigame at **hallgame.html**
 
 **hallgame.html**:  A minigame that involves clicking different doors.  There is a small chance (1/15) per door that the user will get caught and linked to **loser.html**.  There is a larger chance (1/12) that each door will reveal the capsule and link the user to **winner.html**.  Failing either of these, there is a click counter that links the user to **winner.html** once 20 doors have been clicked without getting caught.  All links are preceded by a brief timeout.
+
+## Things Left To Do
+
+  --Complete the missing branches
+  --Code for ending flags/variables that influence multiple endings/generate ending details
+  --Style/layout overhaul (CSS)
+  --Narrative expansion and amendments
+  --Code refactoring
+  --Adding images where they are appropriate
