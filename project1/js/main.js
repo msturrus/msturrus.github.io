@@ -6,12 +6,13 @@ window.onload = function () {
 	$('#char-cunning').html("Cunning: " + localStorage.getItem('cunning'));
 	$('#char-acumen').html("Acumen: " + localStorage.getItem('acumen'));
 	$('#char-name').html(localStorage.getItem('char-name'));
+	var charName = $('#name-input').val();
 }
 
 var doorCounter = 0;
 
 // local variable stats (only relevant on charcreation.html)
-var charName = "";
+var charName
 var intellect = 0;
 var cunning = 0;
 var acumen = 0;
@@ -70,12 +71,14 @@ $('#comt-btn').click(function() {
 	localStorage.setItem('intellect', intellect);
 	localStorage.setItem('cunning', cunning);
 	localStorage.setItem('acumen', acumen);
+	localStorage.setItem('char-name', charName);
 	$('#char-intellect').html("Intellect: " + intellect);
 	$('#char-cunning').html("Cunning: " + cunning);
 	$('#char-acumen').html("Acumen: " + acumen);
-	var charName = $('#name-input').val();
-	$('#name-submit').html(charName);
-	return charName;
+	var charName1 = $('#name-input').val();
+	$('#char-name').html(charName1);
+	return charName = charName1;
+	localStorage.setItem('char-name', charName1);
 })
 
 
