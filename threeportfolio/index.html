@@ -41,14 +41,20 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"></script>
 
 		<script src="js/FlyControls.js"></script>
+    <script src="js/dat.gui.min.js"></script>
+
 
 		<script src="js/stats.min.js"></script>
+    <script src="js/GPUParticleSystem.js" charset="utf-8"></script>
 
 		<script>
 			var container, stats;
+      var tick = 0;
 			var camera, scene, renderer;
 			var clock = new THREE.Clock();
       var buzz = [];
+      var gui = new dat.GUI(),
+			options, spawnerOptions, particleSystem;
 			init();
 			animate();
 			function init() {
@@ -65,6 +71,40 @@
 				controls.dragToLook = false;
 				// scene
 				scene = new THREE.Scene();
+
+        particleSystem = new THREE.GPUParticleSystem({
+				maxParticles: 250000
+  			});
+  			scene.add( particleSystem);
+  			// options passed during each spawned
+  			options = {
+  				position: new THREE.Vector3(),
+  				positionRandomness: .3,
+  				velocity: new THREE.Vector3(),
+  				velocityRandomness: .5,
+  				color: 0xaa88ff,
+  				colorRandomness: .2,
+  				turbulence: .5,
+  				lifetime: 2,
+  				size: 5,
+  				sizeRandomness: 1
+  			};
+  			spawnerOptions = {
+  				spawnRate: 15000,
+  				horizontalSpeed: 1.5,
+  				verticalSpeed: 1.33,
+  				timeScale: 1
+  			}
+  			gui.add(options, "velocityRandomness", 0, 3);
+  			gui.add(options, "positionRandomness", 0, 3);
+  			gui.add(options, "size", 1, 20);
+  			gui.add(options, "sizeRandomness", 0, 25);
+  			gui.add(options, "colorRandomness", 0, 1);
+  			gui.add(options, "lifetime", .1, 10);
+  			gui.add(options, "turbulence", 0, 1);
+  			gui.add(spawnerOptions, "spawnRate", 10, 30000);
+  			gui.add(spawnerOptions, "timeScale", -1, 1);
+
 				scene.fog = new THREE.Fog( 0x000000, 3500, 15000 );
 				scene.fog.color.setHSL( 0.51, 0.4, 0.01 );
 				// world
@@ -155,18 +195,34 @@
 			//
 			function animate() {
 				requestAnimationFrame( animate );
-				render();
 				stats.update();
+  			var delta = clock.getDelta() * spawnerOptions.timeScale;
+  			tick += delta;
+				controls.update( delta );
+  			if (tick < 0) tick = 0;
+  			if (delta > 0) {
+  				options.position.x = camera.position.x + Math.sin(tick * spawnerOptions.horizontalSpeed) * 20 + 50;
+  				options.position.y = camera.position.y + Math.sin(tick * spawnerOptions.verticalSpeed) * 10 + 50;
+  				options.position.z = camera.position.z + Math.sin(tick * spawnerOptions.horizontalSpeed + spawnerOptions.verticalSpeed) * 5 + 50;
+  				for (var x = 0; x < spawnerOptions.spawnRate * delta; x++) {
+  					// Yep, that's really it.	Spawning particles is super cheap, and once you spawn them, the rest of
+  					// their lifecycle is handled entirely on the GPU, driven by a time uniform updated below
+  					particleSystem.spawnParticle(options);
+  				}
+  			}
+  			particleSystem.update(tick);
+  			render();
 			}
 			function render() {
-				var delta = clock.getDelta();
-				controls.update( delta );
-				renderer.render( scene, camera );
+
         buzz.map(function(planet, i){
             var time = performance.now();
             planet.rotation.y += .01;
-            planet.position.x = Math.cos( time ) * .0001;
-            planet.position.z = Math.sin( time ) * .0001;
+            planet.position.x += .0001;
+            planet.position.z -= .0001;
+            // planet.rotation.y += .01;
+            // planet.position.x += Math.cos( time ) * .0001;
+            // planet.position.z -= Math.sin( time ) * .0001;
             // planet.children.map(function(moon, i){
             //   moon.rotation.y += moon.userData.rotation;
             //   var time3 = performance.now() * moon.userData.orbitPeriod;
@@ -180,6 +236,8 @@
             // })
 
           })
+				renderer.render( scene, camera );
+
 			}
 		</script>
 
