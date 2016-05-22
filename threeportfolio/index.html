@@ -228,8 +228,8 @@
         var time = performance.now() * .001;
 
         buzz.map(function(planet, i){
-            planet.position.z = Math.sin( time ) + 2000;
-            planet.position.x = Math.cos( time ) + 2000;
+            planet.position.z = Math.sin( time ) * 2000;
+            planet.position.x = Math.cos( time ) * 2000;
             // planet.position.z -= Math.random() * 50;
             // planet.rotation.y += .01;
             // planet.position.x += Math.cos( time ) * .0001;
