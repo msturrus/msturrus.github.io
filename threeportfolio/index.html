@@ -227,9 +227,9 @@
   			}
         buzz.map(function(planet, i){
             var time = performance.now() * .001;
-            planet.position.y += Math.random() * 50;
-            planet.position.x += Math.random() * 50;
-            planet.position.z -= Math.random() * 50;
+            planet.position.y += Math.sin( time );
+            planet.position.x += Math.cos( time );
+            // planet.position.z -= Math.random() * 50;
             // planet.rotation.y += .01;
             // planet.position.x += Math.cos( time ) * .0001;
             // planet.position.z -= Math.sin( time ) * .0001;
