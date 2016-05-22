@@ -54,6 +54,7 @@
       var buzz = [];
       var gui = new dat.GUI(),
 			options, spawnerOptions, particleSystem;
+      var comet, cometOptions, cometSpawner;
 			init();
 			animate();
 			function init() {
@@ -74,7 +75,14 @@
         particleSystem = new THREE.GPUParticleSystem({
 				maxParticles: 250000
   			});
+
+        comet = new THREE.GPUParticleSystem({
+				maxParticles: 250000
+  			});
+
   			scene.add( particleSystem);
+        scene.add( comet);
+
   			// options passed during each spawned
   			options = {
           look_at: new THREE.Vector3(),
@@ -95,6 +103,28 @@
   				verticalSpeed: 1.33,
   				timeScale: 1
   			}
+
+        cometOptions = {
+          look_at: new THREE.Vector3(),
+  				position: new THREE.Vector3(),
+  				positionRandomness: .3,
+  				velocity: new THREE.Vector3(),
+  				velocityRandomness: .5,
+  				color: 0xffeb99,
+  				colorRandomness: .2,
+  				turbulence: .5,
+  				lifetime: 2,
+  				size: 3,
+  				sizeRandomness: 1
+  			};
+  			cometSpawner = {
+  				spawnRate: 1000,
+  				horizontalSpeed: 1.5,
+  				verticalSpeed: 1.33,
+  				timeScale: 1
+  			}
+
+
   			gui.add(options, "velocityRandomness", 0, 3);
   			gui.add(options, "positionRandomness", 0, 3);
   			gui.add(options, "size", 1, 20);
@@ -208,6 +238,9 @@
   			var delta = clock.getDelta() * spawnerOptions.timeScale;
   			tick += delta;
 				controls.update( delta );
+        var time = performance.now() * .001;
+        var cometTime = performance.now() * .0002;
+
   			if (tick < 0) tick = 0;
   			if (delta > 0) {
           // console.log(camera.getWorldDirection())
@@ -218,14 +251,20 @@
   				options.position.x = camera.position.x + Math.sin(tick * spawnerOptions.horizontalSpeed) * 20 + 50;
   				options.position.y = camera.position.y + Math.sin(tick * spawnerOptions.verticalSpeed) * 10 + 50;
   				options.position.z = camera.position.z + Math.sin(tick * spawnerOptions.horizontalSpeed + spawnerOptions.verticalSpeed) * 5 + 50;
+
+          cometOptions.position.x = Math.sin( cometTime) * 4000;
+  				cometOptions.position.z = Math.cos( cometTime ) * 4000;
           // camera.lookAt(options.position)
   				for (var x = 0; x < spawnerOptions.spawnRate * delta; x++) {
   					// Yep, that's really it.	Spawning particles is super cheap, and once you spawn them, the rest of
   					// their lifecycle is handled entirely on the GPU, driven by a time uniform updated below
   					particleSystem.spawnParticle(options);
+            comet.spawnParticle(cometOptions);
   				}
+
   			}
-        var time = performance.now() * .001;
+
+
 
         buzz.map(function(planet, i){
             planet.position.z = Math.sin( time ) * 2000;
@@ -247,6 +286,7 @@
             // })
 
           })
+        comet.update(tick);
   			particleSystem.update(tick);
   			render();
 			}
