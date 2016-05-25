@@ -100,7 +100,8 @@ body {
   }
 
 .face {
-  background: #43853D; background: hsl(115, 57%, 28%);
+  background: rgb(25, 25, 25);
+  /*background: hsl(115, 57%, 28%);*/
   transition: all .5s ease-in-out;
   height: 200px;
   border-radius: 20px;
@@ -140,6 +141,25 @@ body {
   display: none;
 }
 
+.element-item {
+  transition: background .5s ease-in-out;
+}
+
+.element-item:hover {
+
+  /*background: #43853D; background: hsl(115, 57%, 28%);*/
+  background: #2c3e50;
+  transition: all .5s ease-in-out;
+  z-index: 100;
+  /*-moz-box-shadow: 9px 14px 15px #000000;
+  -webkit-box-shadow: 9px 14px 15px #000000;
+  box-shadow: 9px 14px 15px #000000;*/
+
+  /*-ms-transform: rotateY(95deg) rotateZ(9deg) scale(1.00);*/
+
+
+}
+
 .element-item:hover .face {
   -webkit-transform-origin: 100% 100%;
 
@@ -148,7 +168,8 @@ body {
 	-moz-transform: rotateY(0deg) scale(1.00) translate(220px);
 	-o-transform: rotateY(0deg) scale(1.00) translate(220px);
 	-ms-transform: rotateY(0deg) scale(1.00) translate(220px);
-  background: #43853D; background: hsl(115, 57%, 28%);
+  /*background: #43853D; background: hsl(115, 57%, 28%);*/
+  background: #2c3e50;
   transition: all .5s ease-in-out;
   z-index: 100;
   -moz-box-shadow: 9px 14px 15px #000000;
@@ -229,9 +250,9 @@ img {
   font-size: 12px;
 }*/
 
-.element-item.ruby            { background: #F00; background: hsl(   0, 50%, 35%); }
-.element-item.Node            { background: #43853D; background: hsl(115, 57%, 28%); }
-.element-item.front           { background: #3d6a85; background: hsl(202, 37%, 38%); }
+/*.element-item.ruby            { background: #F00; background: hsl(   0, 50%, 35%); }*/
+/*.element-item.Node            { background: #43853D; background: hsl(115, 57%, 28%); }*/
+/*.element-item.front           { background: #3d6a85; background: hsl(202, 37%, 38%); }*/
 .element-item.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
 .element-item.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
 .element-item.post-transition { background: #0FF; background: hsl( 180, 100%, 50%); }
