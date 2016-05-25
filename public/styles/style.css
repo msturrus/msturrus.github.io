@@ -91,7 +91,7 @@ body {
   padding-top: 30px;
   background-image: url("public/img/dark_fish_skin.png")
   background: #888;
-  color: #262524;
+  /*color: #262524;*/
   border-radius: 50px;
   -moz-box-shadow:inset 9px 14px 15px #cccccc;
   -webkit-box-shadow:inset 9px 14px 15px #cccccc;
@@ -121,6 +121,18 @@ body {
   position: absolute;
   bottom: 40px;
   z-index: 10;
+  font-size: 10px;
+
+}
+
+.overlay p {
+  /*opacity: 1;
+  margin: 20px;
+  transition: all .0s ease-in-out;
+  position: absolute;
+  bottom: 40px;
+  z-index: 10;*/
+  font-size: 10px;
 
 }
 
