@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather Query</title>
+
+    <!-- Bootstrap, normalize, jqueryui styles -->
+    <link rel='stylesheet' href='stylesheets/normalize.css' />
+    <link rel='stylesheet' href='stylesheets/jquery-ui.css' />
+    <link rel='stylesheet' href='stylesheets/bootstrap.css' />
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.js"></script>
+    <!-- <script type="text/javascript" src="scripts/city.list.us.json"></script> -->
+
+    <!-- Awesomeplete -->
+    <script type="text/javascript" src="scripts/awesomeplete.js"></script>
+    <link rel="stylesheet" href="stylesheets/awesomeplete.css" />
+
+    <!-- TaffyDB -->
+    <script type="text/javascript" src="scripts/taffydb.js"></script>
+    <!-- <script type="text/javascript" src="scripts/citydb.js"></script> -->
+
+  </head>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"> Temp Lookup</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/msturrus/yapmo-weather-app">GitHub Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <section class="panel-body upload-font">
+                <div class="col-xs-6">
+                  <label for="">Enter City:</label>
+                  <input type="text" id="city"><span id="city-lookup"></span>
+                  <button id="get-location-btn" onclick="getLocation()">Get Current Location</button>
+                </div>
+                <div class="col-xs-6">
+                  <label for="">Between:</label><br>
+                  <input type="text" id="start-date" placeholder="start date"><span> and </span>
+                  <input type="text" id="end-date" placeholder="end date">
+                  <button id="getBtn">Get Average</button>
+                </div>
+              </section>
+            </div>
+          </div> <!-- close column -->
+        </div> <!-- close row -->
+      </div> <!-- close container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <section class="panel-body upload-font">
+                <div class="col-xs-12 center">
+                  <h2 id="output"></h2>
+                </div>
+              </section>
+            </div>
+          </div> <!-- close column -->
+        </div> <!-- close row -->
+      </div> <!-- close container -->
+    </body>
+
+    <footer></footer>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- main.js -->
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+</html>
