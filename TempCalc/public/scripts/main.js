@@ -6,6 +6,30 @@ window.onload = function() {
 }
 
 
+// Googlemaps Stuff
+var map;
+var marker = null;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
+    zoom: 8,
+    disableDefaultUI: false
+    });
+    google.maps.event.addListener(map, 'click', function(event) {
+      console.log(event.latLng.lng());
+      latitude = event.latLng.lat();
+      longitude = event.latLng.lng();
+      $("#coordinate").val(event.latLng.lat() + ", " + event.latLng.lng());
+      $("#coordinate").select();
+      if (marker) { marker.setMap(null); }
+      marker = new google.maps.Marker({ position: event.latLng, map: map});
+      $("#lat").html(latitude);
+      $("#lon").html(longitude);
+    });
+}
+
+var gmapsKey = "AIzaSyAUOZNZSagfJ4L2vmUT1WkMZASWJTxOaFg"
 var key = "97d75d4923f1734e25639e0e89ca9ce9";
 
 // Variables
@@ -121,4 +145,53 @@ function formatTotal(totalAverage) {
   $('#output').html("The average daily temperature for those dates is " + Math.round(totalAverage * 100) / 100 + "&deg; F");
 };
 
-// http-server -c-1
+var map;
+
+// Update position
+$(document).on('submit', '.edit_marker', function(e) {
+  e.preventDefault();
+
+  var $index = $(this).data('marker-index');
+
+  $lat = $('#marker_' + $index + '_lat').val();
+  $lng = $('#marker_' + $index + '_lng').val();
+
+  var template = $('#edit_marker_template').text();
+
+  // Update form values
+  var content = template.replace(/{{index}}/g, $index).replace(/{{lat}}/g, $lat).replace(/{{lng}}/g, $lng);
+
+  map.markers[$index].setPosition(new google.maps.LatLng($lat, $lng));
+  map.markers[$index].infoWindow.setContent(content);
+
+  $marker = $('#markers-with-coordinates').find('li').eq(0).find('a');
+  $marker.data('marker-lat', $lat);
+  $marker.data('marker-lng', $lng);
+});
+
+// Update center
+$("document").on('click', '.pan-to-marker', function(e) {
+  e.preventDefault();
+
+  var lat, lng;
+
+  var $index = $(this).data('marker-index');
+  var $lat = $(this).data('marker-lat');
+  var $lng = $(this).data('marker-lng');
+
+  if ($index != undefined) {
+    // using indices
+    var position = map.markers[$index].getPosition();
+    lat = position.lat();
+    lng = position.lng();
+  }
+  else {
+    // using coordinates
+    lat = $lat;
+    lng = $lng;
+  }
+
+  map.setCenter(lat, lng);
+});
+
+// // http-server -c-1
