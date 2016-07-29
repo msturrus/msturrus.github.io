@@ -68,8 +68,7 @@ function showPosition(position) {
     console.log(position);
     longitude = position.coords.longitude;
     latitude = position.coords.latitude
-    $('footer').html("Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude);
+    
   } else {
     latitude = "41.8977778";
     longitude = "-87.6227471";
